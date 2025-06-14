@@ -1,0 +1,308 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\e-commerce-web.csproj": {}
+  },
+  "projects": {
+    "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\e-commerce-web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\e-commerce-web.csproj",
+        "projectName": "e-commerce-web",
+        "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\e-commerce-web.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj"
+              },
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj"
+              },
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\e-commerce-web.service.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\e-commerce-web.service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj",
+        "projectName": "e-commerce-web.data",
+        "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj",
+        "projectName": "e-commerce-web.core",
+        "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\e-commerce-web.service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\e-commerce-web.service.csproj",
+        "projectName": "e-commerce-web.service",
+        "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\e-commerce-web.service.csproj",
+        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\e-commerce-web.data.csproj"
+              },
+              "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj": {
+                "projectPath": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\e-commerce-web.core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

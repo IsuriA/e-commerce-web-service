@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>e_commerce_web.service</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\e-commerce-web.data\e-commerce-web.data.csproj" />
+    <ProjectReference Include="..\e-commerce-web.model\e-commerce-web.core.csproj" />
+  </ItemGroup>
+
+</Project>
