@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using e_commerce_web.model.Models;
+﻿using e_commerce_web.model.DTOs;
 
 namespace e_commerce_web.model
 {
     public class AuthenticateResponse
     {
-        public User User { get; set; }
+        public UserDto User { get; set; }
+
         public string Token { get; set; }
 
-        public AuthenticateResponse(User user, string token)
+        public AuthenticateResponse(UserDto user, string token)
         {
             User = user;
             Token = token;

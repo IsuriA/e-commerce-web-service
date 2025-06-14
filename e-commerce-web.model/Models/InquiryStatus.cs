@@ -9,6 +9,8 @@ public partial class InquiryStatus
 
     public string Name { get; set; } = null!;
 
+    public string Code { get; set; } = null!;
+
     public string? Description { get; set; }
 
     public virtual ICollection<Inquiry> Inquiries { get; set; } = new List<Inquiry>();

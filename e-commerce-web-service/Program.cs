@@ -1,8 +1,12 @@
+using AutoMapper;
 using e_commerce_web.data;
 using e_commerce_web.model;
 using e_commerce_web.model.Models;
 using e_commerce_web.service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,16 +19,50 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 builder.Services.AddDbContext<ECommerceDbContext>(options =>
    options.UseSqlServer(connectionString));
 
-builder.Services.AddTransient<UserDataManager>();
-builder.Services.AddTransient<UserService>();
+builder.Services.AddScoped<UserDataManager>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<InquiryDataManager>();
+builder.Services.AddScoped<InquiryService>();
+builder.Services.AddScoped<ProductDataManager>();
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<LookupService>();
+
+builder.Services.AddScoped<LookupDataManager>();
 
 // Add services to the container.
-                                                                     
+
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options => {
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
+
+// Auto Mapper Configurations
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddMemoryCache();
+
+
 
 var app = builder.Build();
+app.UseCors(options =>
+                options.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+            );
 
 if (app.Environment.IsDevelopment())
 {
@@ -42,6 +80,11 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// custom jwt auth middleware
+app.UseMiddleware<JwtMiddleware>();
+
 app.MapControllers();
 
 app.Run();
+
+app.UseStaticFiles();

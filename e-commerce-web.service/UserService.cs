@@ -1,9 +1,13 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AutoMapper;
 using e_commerce_web.data;
 using e_commerce_web.model;
+using e_commerce_web.model.DTOs;
 using e_commerce_web.model.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,11 +17,21 @@ namespace e_commerce_web.service
     {
         private UserDataManager _userDataManager;
         private readonly AppSettings _appSettings;
+        private readonly IMapper mapper;
+        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly LookupDataManager lookupDataManager;
 
-        public UserService(UserDataManager userDataManager, IOptions<AppSettings> appSettings)
+        public UserService(UserDataManager userDataManager
+            , IOptions<AppSettings> appSettings
+            , IHttpContextAccessor httpContextAccessor
+            , LookupDataManager lookupDataManager
+            , IMapper mapper)
         {
             _userDataManager = userDataManager ?? throw new ArgumentNullException(nameof(userDataManager));
             _appSettings = appSettings.Value;
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            this.httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+            this.lookupDataManager = lookupDataManager ?? throw new ArgumentNullException(nameof(lookupDataManager));
         }
 
         public async Task<IEnumerable<User>> GetAll()
@@ -27,14 +41,22 @@ namespace e_commerce_web.service
 
         public async Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model)
         {
-            var user = await _userDataManager.GetUserAsync(model.Username, model.Password);
+            string passwordHash = Convert.ToBase64String(Encoding.UTF8.GetBytes(model.Password));
+            var user = await _userDataManager.GetUserAsync(model.Username, passwordHash);
             // return null if user not found
             if (user == null) return null;
 
-            // authentication successful so generate jwt token
-            var token = GenerateJwtToken(user);
+            UserDto dto = this.mapper.Map<UserDto>(user);
+            int userRoleId = user.UserRoleUsers.FirstOrDefault()?.RoleId
+                ?? throw new ApplicationException("User doesn't have any role assigned");
+            Role role = this.lookupDataManager.GetRoles().First(r => r.Id == userRoleId);
 
-            return new AuthenticateResponse(user, token);
+            dto.Role = this.mapper.Map<RoleDto>(role);
+
+            // authentication successful so generate jwt token
+            var token = GenerateJwtToken(dto);
+
+            return new AuthenticateResponse(dto, token);
         }
 
         public async Task<User> GetByIdAsync(int id)
@@ -43,7 +65,7 @@ namespace e_commerce_web.service
         }
 
         // helper methods
-        private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(UserDto user)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -57,6 +79,24 @@ namespace e_commerce_web.service
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
+        }
+
+        public async Task<User?> RegisterAsync(UserDto dto)
+        {
+            // Check if user already exists
+            var existingUser = await _userDataManager.GetUserByUsernameAsync(dto.Username);
+            if (existingUser != null)
+                return null; // Username already taken
+
+            // Hash the password before saving
+            User userModel = this.mapper.Map<User>(dto);
+
+            return await _userDataManager.AddUserAsync(userModel, dto.Role.Id);
+        }
+
+        public void Logout()
+        {
+            this.httpContextAccessor.HttpContext.Items = null;
         }
     }
 }

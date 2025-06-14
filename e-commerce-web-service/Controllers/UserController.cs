@@ -1,6 +1,8 @@
 ﻿using e_commerce_web.model;
+using e_commerce_web.model.DTOs;
 using e_commerce_web.model.Models;
 using e_commerce_web.service;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_commerce_web_service.Controllers
@@ -9,29 +11,50 @@ namespace e_commerce_web_service.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        UserService _userService;
+        private readonly UserService userService;
 
         public UserController(UserService userService)
         {
-            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+            this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IEnumerable<User>> GetUsers()
         {
-            return await _userService.GetAll();
+            return await this.userService.GetAll();
         }
 
 
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest model)
         {
-            var response = await _userService.AuthenticateAsync(model);
+            var response = await this.userService.AuthenticateAsync(model);
 
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             return Ok(response);
+        }
+
+        [HttpPost("register")]
+        //[Authorize]
+        public async Task<IActionResult> Register([FromBody] UserDto dto)
+        {
+            var user = await this.userService.RegisterAsync(dto);
+
+            if (user == null)
+                return BadRequest(new { message = "Username already exists." });
+
+            return Ok(new { message = "User registered successfully." });
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            this.userService.Logout();
+
+            return Ok();
         }
     }
 }

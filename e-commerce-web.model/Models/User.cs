@@ -31,9 +31,5 @@ public partial class User
 
     public virtual ICollection<Order> OrderUsers { get; set; } = new List<Order>();
 
-    public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
-
-    public virtual ICollection<UserRole> UserRoleRoles { get; set; } = new List<UserRole>();
-
     public virtual ICollection<UserRole> UserRoleUsers { get; set; } = new List<UserRole>();
 }

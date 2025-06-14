@@ -59,6 +59,9 @@ public partial class ECommerceDbContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.Code)
+                .HasMaxLength(50)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<DeliveryPerson>(entity =>
@@ -101,7 +104,7 @@ public partial class ECommerceDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Description).HasColumnType("text");
+            entity.Property(e => e.Message).HasColumnType("text");
 
             entity.HasOne(d => d.Status).WithMany(p => p.Inquiries)
                 .HasForeignKey(d => d.StatusId)
@@ -120,6 +123,9 @@ public partial class ECommerceDbContext : DbContext
 
             entity.Property(e => e.Description).HasColumnType("text");
             entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsUnicode(false); 
+            entity.Property(e => e.Code)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });

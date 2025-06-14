@@ -10,7 +10,6 @@ D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce-web.service.AssemblyInfoInputs.cache
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce-web.service.AssemblyInfo.cs
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce-web.service.csproj.CoreCompileInputs.cache
-D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce-web.service.sourcelink.json
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commer.98997685.Up2Date
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\e-commerce-web.service.dll
 D:\Git\e-commerce-web-service\e-commerce-web.service\obj\Debug\net8.0\refint\e-commerce-web.service.dll

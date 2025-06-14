@@ -9,7 +9,7 @@ public partial class Inquiry
 
     public DateTime CreatedAt { get; set; }
 
-    public string Description { get; set; } = null!;
+    public string Message { get; set; } = null!;
 
     public int UserId { get; set; }
 

@@ -12,4 +12,6 @@ public partial class Role
     public int AccessLevel { get; set; }
 
     public DateTime CreatedAt { get; set; }
+
+    public virtual ICollection<UserRole> UserRoleRoles { get; set; } = new List<UserRole>();
 }

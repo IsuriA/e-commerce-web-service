@@ -17,9 +17,11 @@ namespace e_commerce_web.data
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> GetUserAsync(string username, string password) {
+        public async Task<User> GetUserAsync(string username, string password)
+        {
 
             var user = await _context.Users
+                .Include(u => u.UserRoleUsers)
                 .SingleOrDefaultAsync(x => x.Username == username && x.Password == password);
 
             return user;
@@ -29,5 +31,30 @@ namespace e_commerce_web.data
         {
             return await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        public async Task<User?> GetUserByUsernameAsync(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+        }
+
+        public IEnumerable<Role> GetUserRoles(int userId)
+        {
+            return _context.UserRoles.Where(u => u.UserId == userId)
+                .Include(u => u.Role)
+                .Select(u => u.Role)
+                .OrderBy(r => r.AccessLevel)
+                .ToList();
+        }
+
+        public async Task<User> AddUserAsync(User user, int roleId)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+
+            await _context.UserRoles.AddAsync(new UserRole { UserId = user.Id, RoleId = roleId });
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
     }
-};
+}
