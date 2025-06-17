@@ -26,5 +26,7 @@ namespace e_commerce_web.model.DTOs
 
         public CategoryDto Category { get; set; }
 
+        public BrandDto Brand { get; set; }
+
     }
 }

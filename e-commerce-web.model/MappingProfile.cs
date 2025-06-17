@@ -16,6 +16,7 @@ namespace e_commerce_web.model
             CreateMap<Role, RoleDto>().ConvertUsing<RoleToRoleDtoConverter>();
             CreateMap<User, UserDto>().ConvertUsing<UserToUserDtoConverter>();
             CreateMap<Product, ProductDto>().ConvertUsing<ProductToProductDtoConverter>();
+            CreateMap<Brand, BrandDto>().ConvertUsing<BrandToBrandDtoConverter>(); 
         }
     }
 }

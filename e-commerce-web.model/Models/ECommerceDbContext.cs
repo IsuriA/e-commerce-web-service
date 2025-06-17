@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_web.model.Models;
 
@@ -48,6 +46,8 @@ public partial class ECommerceDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<UserRole> UserRoles { get; set; }
+
+    public virtual DbSet<Brand> Brands { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -127,6 +127,15 @@ public partial class ECommerceDbContext : DbContext
                 .IsUnicode(false); 
             entity.Property(e => e.Code)
                 .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<Brand>(entity =>
+        {
+            entity.ToTable("brand");
+
+            entity.Property(e => e.Name)
+                .HasMaxLength(100)
                 .IsUnicode(false);
         });
 
@@ -244,6 +253,11 @@ public partial class ECommerceDbContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_dbo.Product_CategoryId");
+
+            entity.HasOne(d => d.Brand).WithMany(p => p.Products)
+                .HasForeignKey(d => d.BrandId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_dbo.prodct_dbo.brand_BrandId");
 
             entity.HasOne(d => d.Promotion).WithMany(p => p.Products)
                 .HasForeignKey(d => d.PromotionId)

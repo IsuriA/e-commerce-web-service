@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using e_commerce_web.model.Models;
+﻿using e_commerce_web.model.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -18,7 +13,8 @@ namespace e_commerce_web.data
         {
             InquiryStatuses,
             ProductCategories,
-            UserRoles
+            UserRoles,
+            Brands
         }
 
         public LookupDataManager(ECommerceDbContext dbContext,
@@ -28,11 +24,11 @@ namespace e_commerce_web.data
             this.memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
         }
 
-        public IEnumerable<InquiryStatus> GetInqiryStatuses()
+        public async Task<IEnumerable<InquiryStatus>> GetInqiryStatusesAsync()
         {
             if (!memoryCache.TryGetValue(LookupCacheKeys.InquiryStatuses, out IEnumerable<InquiryStatus> inquiryStatuses))
             {
-                inquiryStatuses = this.context.InquiryStatuses;
+                inquiryStatuses = await this.context.InquiryStatuses.ToListAsync();
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromHours(1));
@@ -45,7 +41,7 @@ namespace e_commerce_web.data
 
         public IEnumerable<Category> GetProductCategories()
         {
-            if (!memoryCache.TryGetValue(LookupCacheKeys.InquiryStatuses, out IEnumerable<Category> categories))
+            if (!memoryCache.TryGetValue(LookupCacheKeys.ProductCategories, out IEnumerable<Category> categories))
             {
                 categories = this.context.Categories;
 
@@ -60,17 +56,32 @@ namespace e_commerce_web.data
 
         public IEnumerable<Role> GetRoles()
         {
-            if (!memoryCache.TryGetValue(LookupCacheKeys.InquiryStatuses, out IEnumerable<Role> roles))
+            if (!memoryCache.TryGetValue(LookupCacheKeys.UserRoles, out IEnumerable<Role> roles))
             {
                 roles = this.context.Roles;
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromHours(1));
 
-                memoryCache.Set(LookupCacheKeys.ProductCategories, roles, cacheEntryOptions);
+                memoryCache.Set(LookupCacheKeys.UserRoles, roles, cacheEntryOptions);
             }
 
             return roles ?? new List<Role>();
+        }
+
+        public async Task<IEnumerable<Brand>> GetBrandsAsync()
+        {
+            if (!memoryCache.TryGetValue(LookupCacheKeys.Brands, out IEnumerable<Brand> brands))
+            {
+                brands = await this.context.Brands.ToListAsync();
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromHours(1));
+
+                memoryCache.Set(LookupCacheKeys.Brands, brands, cacheEntryOptions);
+            }
+
+            return brands ?? new List<Brand>();
         }
     }
 }

@@ -55,5 +55,18 @@ namespace e_commerce_web.service
                 return dto;
             });
         }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsByBrandAsync(int brandId)
+        {
+            IEnumerable<Product> products = await this.productDataManager.GetProductsByBrandAsync(brandId);
+
+            return products.Select(x =>
+            {
+                ProductDto dto = this.mapper.Map<ProductDto>(x);
+                dto.Category = this.mapper.Map<CategoryDto>(x.Category);
+                return dto;
+            });
+        }
+
     }
 }

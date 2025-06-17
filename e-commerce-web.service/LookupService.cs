@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using e_commerce_web.data;
 using e_commerce_web.model;
+using e_commerce_web.model.DTOs;
 using e_commerce_web.model.Models;
 using Microsoft.AspNetCore.Http;
 
@@ -37,6 +38,13 @@ namespace e_commerce_web.service
             IEnumerable<Role> roles = this.lookupDataManager.GetRoles();
 
             return roles.Select(c => this.mapper.Map<RoleDto>(c));
+        }
+
+        public async Task<IEnumerable<BrandDto>> GetBrandsAsync()
+        {
+            IEnumerable<Brand> brands = await this.lookupDataManager.GetBrandsAsync();
+
+            return brands.Select(c => this.mapper.Map<BrandDto>(c));
         }
     }
 }

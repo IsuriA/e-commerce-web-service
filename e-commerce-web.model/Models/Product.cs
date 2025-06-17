@@ -13,6 +13,8 @@ public partial class Product
 
     public decimal Price { get; set; }
 
+    public int BrandId { get; set; }
+
     public string? Description { get; set; }
 
     public string? ImageUrl { get; set; }
@@ -26,6 +28,8 @@ public partial class Product
     public int UserId { get; set; }
 
     public virtual Category Category { get; set; } = null!;
+
+    public virtual Brand Brand { get; set; } = null!;
 
     public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 

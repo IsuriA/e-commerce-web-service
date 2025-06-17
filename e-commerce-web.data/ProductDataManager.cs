@@ -27,8 +27,20 @@ namespace e_commerce_web.data
         {
             return await this.context.Products
                 .Include(p => p.Category)
+                .Include(p => p.Brand)
                 .ToListAsync();
         }
+    
+        public async Task<IEnumerable<Product>> GetProductsByBrandAsync(int brandId)
+        {
+
+            return await this.context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p => p.BrandId == brandId)
+                .ToListAsync();
+        }
+
 
     }
 }

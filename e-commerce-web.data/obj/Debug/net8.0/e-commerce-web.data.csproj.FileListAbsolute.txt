@@ -13,3 +13,4 @@ D:\Git\e-commerce-web-service\e-commerce-web.data\obj\Debug\net8.0\e-commerce-we
 D:\Git\e-commerce-web-service\e-commerce-web.data\obj\Debug\net8.0\refint\e-commerce-web.data.dll
 D:\Git\e-commerce-web-service\e-commerce-web.data\obj\Debug\net8.0\e-commerce-web.data.pdb
 D:\Git\e-commerce-web-service\e-commerce-web.data\obj\Debug\net8.0\ref\e-commerce-web.data.dll
+D:\Git\e-commerce-web-service\e-commerce-web.data\obj\Debug\net8.0\e-commerce-web.data.sourcelink.json

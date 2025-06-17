@@ -3,6 +3,78 @@
   "WorkspaceRootPath": "D:\\Git\\e-commerce-web-service\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\controllers\\lookupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\controllers\\lookupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.service\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|solutionrelative:e-commerce-web.service\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.data\\lookupdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|solutionrelative:e-commerce-web.data\\lookupdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\brandtobranddtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\brandtobranddtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\roletoroledtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\roletoroledtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\models\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\models\\ecommercedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|solutionrelative:e-commerce-web.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\producttoproductdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\producttoproductdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\productdtotoproductconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\productdtotoproductconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\dtos\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\dtos\\inquirystatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\dtos\\inquirystatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.data\\productdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|solutionrelative:e-commerce-web.data\\productdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,64 +91,12 @@
       "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\productdtotoproductconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\productdtotoproductconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\producttoproductdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\producttoproductdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.data\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|solutionrelative:e-commerce-web.data\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{704B33E3-0609-453A-9AAB-C17B27AEA2A8}|e-commerce-web-service\\e-commerce-web.csproj|solutionrelative:e-commerce-web-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|solutionrelative:e-commerce-web.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.service\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|solutionrelative:e-commerce-web.service\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\usertouserdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\usertouserdtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.data\\productdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22336A1B-8B77-42F6-B1C6-0F5AE2AC553C}|e-commerce-web.data\\e-commerce-web.data.csproj|solutionrelative:e-commerce-web.data\\productdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\converters\\roletoroledtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|solutionrelative:e-commerce-web.model\\converters\\roletoroledtoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.service\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2212DC70-7618-4687-AEA5-FC0D45BE727A}|e-commerce-web.service\\e-commerce-web.service.csproj|solutionrelative:e-commerce-web.service\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E5EC76E-F4A4-4472-82C6-1719807354D9}|e-commerce-web.model\\e-commerce-web.core.csproj|d:\\git\\e-commerce-web-service\\e-commerce-web.model\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,7 +118,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "BrandToBrandDtoConverter.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\BrandToBrandDtoConverter.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.model\\Converters\\BrandToBrandDtoConverter.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\BrandToBrandDtoConverter.cs",
+              "RelativeToolTip": "e-commerce-web.model\\Converters\\BrandToBrandDtoConverter.cs",
+              "ViewState": "AQIAAAAAAAAgMzMzM7MiwAYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T14:22:13.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LookupDataManager.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\LookupDataManager.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.data\\LookupDataManager.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\LookupDataManager.cs",
+              "RelativeToolTip": "e-commerce-web.data\\LookupDataManager.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAEcAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T16:41:31.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LookupController.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\LookupController.cs",
+              "RelativeDocumentMoniker": "e-commerce-web-service\\Controllers\\LookupController.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\LookupController.cs",
+              "RelativeToolTip": "e-commerce-web-service\\Controllers\\LookupController.cs",
+              "ViewState": "AQIAABkAAABgmZmZmZklwCYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T14:35:21.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BrandDto.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\BrandDto.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.model\\DTOs\\BrandDto.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\BrandDto.cs",
+              "RelativeToolTip": "e-commerce-web.model\\DTOs\\BrandDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T14:14:53.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "InquiryStatusDto.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\InquiryStatusDto.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.model\\DTOs\\InquiryStatusDto.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\InquiryStatusDto.cs",
+              "RelativeToolTip": "e-commerce-web.model\\DTOs\\InquiryStatusDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T14:13:52.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.model\\Models\\Brand.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\Brand.cs",
+              "RelativeToolTip": "e-commerce-web.model\\Models\\Brand.cs",
+              "ViewState": "AQIAAAAAAACZmZmZmZkqwAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T14:04:40.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ECommerceDbContext.cs",
+              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\ECommerceDbContext.cs",
+              "RelativeDocumentMoniker": "e-commerce-web.model\\Models\\ECommerceDbContext.cs",
+              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\ECommerceDbContext.cs",
+              "RelativeToolTip": "e-commerce-web.model\\Models\\ECommerceDbContext.cs",
+              "ViewState": "AQIAAPgAAACAzszMzMwEwAMBAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T14:02:57.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "InquiryService.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\InquiryService.cs",
               "RelativeDocumentMoniker": "e-commerce-web.service\\InquiryService.cs",
@@ -111,19 +222,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\ProductDto.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\DTOs\\ProductDto.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\ProductDto.cs",
               "RelativeToolTip": "e-commerce-web.model\\DTOs\\ProductDto.cs",
-              "ViewState": "AQIAAA0AAAAAAQAAAMAgwBYAAAAKAAAA",
+              "ViewState": "AQIAABIAAABw/////180wBgAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:59:42.328Z"
+              "WhenOpened": "2025-06-12T14:59:42.328Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 21,
               "Title": "InquiryController.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\InquiryController.cs",
               "RelativeDocumentMoniker": "e-commerce-web-service\\Controllers\\InquiryController.cs",
@@ -131,119 +243,103 @@
               "RelativeToolTip": "e-commerce-web-service\\Controllers\\InquiryController.cs",
               "ViewState": "AQIAAAkAAACAAAAAAOAwwBcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T02:33:01.214Z"
+              "WhenOpened": "2025-06-12T02:33:01.214Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\appsettings.json",
-              "RelativeDocumentMoniker": "e-commerce-web-service\\appsettings.json",
-              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\appsettings.json",
-              "RelativeToolTip": "e-commerce-web-service\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-11T15:35:08.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "JwtMiddleware.cs",
-              "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\JwtMiddleware.cs",
-              "RelativeDocumentMoniker": "e-commerce-web.service\\JwtMiddleware.cs",
-              "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\JwtMiddleware.cs",
-              "RelativeToolTip": "e-commerce-web.service\\JwtMiddleware.cs",
-              "ViewState": "AQIAAC8AAAAAWDMzMzPzvzoAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T15:18:15.369Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "UserToUserDtoConverter.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\UserToUserDtoConverter.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\Converters\\UserToUserDtoConverter.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\UserToUserDtoConverter.cs",
               "RelativeToolTip": "e-commerce-web.model\\Converters\\UserToUserDtoConverter.cs",
-              "ViewState": "AQIAAAkAAAAgz8zMzIwnwBkAAAAzAAAA",
+              "ViewState": "AQIAAAkAAACQZ2ZmZsY6wBkAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T15:14:09.928Z"
+              "WhenOpened": "2025-06-11T15:14:09.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 8,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\Product.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\Models\\Product.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Models\\Product.cs",
               "RelativeToolTip": "e-commerce-web.model\\Models\\Product.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAIAwwBMAAAAnAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAACYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T14:00:00.575Z"
+              "WhenOpened": "2025-06-11T14:00:00.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 6,
               "Title": "RoleToRoleDtoConverter.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\RoleToRoleDtoConverter.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\Converters\\RoleToRoleDtoConverter.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\RoleToRoleDtoConverter.cs",
               "RelativeToolTip": "e-commerce-web.model\\Converters\\RoleToRoleDtoConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAC4MzMzMzP7vwwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:57:10.315Z"
+              "WhenOpened": "2025-06-11T13:57:10.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "ProductToProductDtoConverter.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\ProductToProductDtoConverter.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\Converters\\ProductToProductDtoConverter.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\ProductToProductDtoConverter.cs",
               "RelativeToolTip": "e-commerce-web.model\\Converters\\ProductToProductDtoConverter.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAIA/wB0AAAAMAAAA",
+              "ViewState": "AQIAAA8AAAAAzczMzKw5wBwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T03:38:05.783Z"
+              "WhenOpened": "2025-06-11T03:38:05.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "ProductDtoToProductConverter.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\ProductDtoToProductConverter.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\Converters\\ProductDtoToProductConverter.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\Converters\\ProductDtoToProductConverter.cs",
               "RelativeToolTip": "e-commerce-web.model\\Converters\\ProductDtoToProductConverter.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAIA/wBYAAAAMAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAtwBYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T15:02:19.486Z"
+              "WhenOpened": "2025-06-09T15:02:19.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "ProductDataManager.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\ProductDataManager.cs",
               "RelativeDocumentMoniker": "e-commerce-web.data\\ProductDataManager.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\ProductDataManager.cs",
               "RelativeToolTip": "e-commerce-web.data\\ProductDataManager.cs",
-              "ViewState": "AQIAABAAAAAgMzMzMzMiwBwAAAAoAAAA",
+              "ViewState": "AQIAABcAAAAgMzMzM/MlwB0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T15:00:43.703Z"
+              "WhenOpened": "2025-06-09T15:00:43.703Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\MappingProfile.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\MappingProfile.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\MappingProfile.cs",
               "RelativeToolTip": "e-commerce-web.model\\MappingProfile.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAcwAgAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T15:23:59.308Z"
+              "WhenOpened": "2025-06-08T15:23:59.308Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Program.cs",
               "RelativeDocumentMoniker": "e-commerce-web-service\\Program.cs",
@@ -251,68 +347,73 @@
               "RelativeToolTip": "e-commerce-web-service\\Program.cs",
               "ViewState": "AQIAAFgAAACAiUOQrVMZwFkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T15:23:50.274Z"
+              "WhenOpened": "2025-06-08T15:23:50.274Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\UserDataManager.cs",
               "RelativeDocumentMoniker": "e-commerce-web.data\\UserDataManager.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.data\\UserDataManager.cs",
               "RelativeToolTip": "e-commerce-web.data\\UserDataManager.cs",
-              "ViewState": "AQIAAB0AAAAQAAAAAKAywAUAAAAgAAAA",
+              "ViewState": "AQIAAB4AAAAAAQAAAAD6vwUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T14:26:00.531Z"
+              "WhenOpened": "2025-06-08T14:26:00.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\UserDto.cs",
               "RelativeDocumentMoniker": "e-commerce-web.model\\DTOs\\UserDto.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.model\\DTOs\\UserDto.cs",
               "RelativeToolTip": "e-commerce-web.model\\DTOs\\UserDto.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAMA/wAoAAAARAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAIAtwAoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T14:08:46.582Z"
+              "WhenOpened": "2025-06-08T14:08:46.582Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
               "Title": "LookupService.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\LookupService.cs",
               "RelativeDocumentMoniker": "e-commerce-web.service\\LookupService.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\LookupService.cs",
               "RelativeToolTip": "e-commerce-web.service\\LookupService.cs",
-              "ViewState": "AQIAABsAAAAAaWZmZuYbwCIAAAAiAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAA7wCwAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T14:03:36.541Z"
+              "WhenOpened": "2025-06-08T14:03:36.541Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 18,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "e-commerce-web-service\\Controllers\\UserController.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\UserController.cs",
               "RelativeToolTip": "e-commerce-web-service\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAYwDIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T13:38:35.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "e-commerce-web-service\\Controllers\\ProductController.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web-service\\Controllers\\ProductController.cs",
               "RelativeToolTip": "e-commerce-web-service\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAABcAAACYmZmZmZkhwBkAAAAMAAAA",
+              "ViewState": "AQIAADsAAACA/v////8lwEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T13:38:36.165Z"
+              "WhenOpened": "2025-06-08T13:38:36.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -322,19 +423,20 @@
               "RelativeDocumentMoniker": "e-commerce-web.service\\ProductService.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\ProductService.cs",
               "RelativeToolTip": "e-commerce-web.service\\ProductService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAYwCoAAAAQAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAADAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T13:38:36.201Z"
+              "WhenOpened": "2025-06-08T13:38:36.201Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\UserService.cs",
               "RelativeDocumentMoniker": "e-commerce-web.service\\UserService.cs",
               "ToolTip": "D:\\Git\\e-commerce-web-service\\e-commerce-web.service\\UserService.cs",
               "RelativeToolTip": "e-commerce-web.service\\UserService.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAgwFsAAAA4AAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAA3wFsAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T08:12:19.783Z",
               "EditorCaption": ""

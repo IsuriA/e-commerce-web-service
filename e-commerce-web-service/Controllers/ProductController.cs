@@ -61,5 +61,14 @@ namespace e_commerce_web_service.Controllers
             var relativePath = $"uploads/{fileName}";
             return Ok(new { imageUrl = relativePath });
         }
+
+        [HttpGet("brand/{brandId}")]
+        public async Task<IActionResult> GetProductsByBrand(int brandId)
+        {
+            var products = await this.prodcutService.GetProductsByBrandAsync(brandId);   
+
+            return Ok(products);
+        }
+
     }
 }

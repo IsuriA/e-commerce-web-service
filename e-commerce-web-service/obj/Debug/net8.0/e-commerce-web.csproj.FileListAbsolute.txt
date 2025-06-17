@@ -191,3 +191,4 @@ D:\Git\e-commerce-web-service\e-commerce-web-service\obj\Debug\net8.0\refint\e-c
 D:\Git\e-commerce-web-service\e-commerce-web-service\obj\Debug\net8.0\e-commerce-web.pdb
 D:\Git\e-commerce-web-service\e-commerce-web-service\obj\Debug\net8.0\e-commerce-web.genruntimeconfig.cache
 D:\Git\e-commerce-web-service\e-commerce-web-service\obj\Debug\net8.0\ref\e-commerce-web.dll
+D:\Git\e-commerce-web-service\e-commerce-web-service\obj\Debug\net8.0\e-commerce-web.sourcelink.json
