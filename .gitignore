@@ -1,2 +1,11 @@
-/bin
-/obj
+e-commerce-web-service/bin
+e-commerce-web-service/obj
+
+e-commerce-web.model/bin
+e-commerce-web.model/obj
+
+e-commerce-web.data/bin
+e-commerce-web.data/obj
+
+e-commerce-web.service/bin
+e-commerce-web.service/obj
