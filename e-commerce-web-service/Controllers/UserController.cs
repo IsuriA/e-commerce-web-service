@@ -2,7 +2,6 @@
 using e_commerce_web.model.DTOs;
 using e_commerce_web.model.Models;
 using e_commerce_web.service;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace e_commerce_web_service.Controllers

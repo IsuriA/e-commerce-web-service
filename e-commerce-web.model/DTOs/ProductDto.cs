@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using e_commerce_web.model.Models;
+﻿using e_commerce_web.model.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace e_commerce_web.model.DTOs
@@ -20,13 +15,14 @@ namespace e_commerce_web.model.DTOs
 
         public string Description { get; set; }
 
-        //public IFormFile ImageFile { get; set; }
+        public List<IFormFile> ImageFiles { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
 
         public CategoryDto Category { get; set; }
 
         public BrandDto Brand { get; set; }
 
+        public DateTime CreatedAt { get; set; }
     }
 }

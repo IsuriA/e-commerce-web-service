@@ -20,16 +20,16 @@ namespace e_commerce_web_service.Controllers
         [HttpGet]
         [Route("productCategories")]
         [Authorize]
-        public IEnumerable<CategoryDto> GetProductCategories()
+        public async Task<IEnumerable<CategoryDto>> GetProductCategoriesAsync()
         {
-            return this.lookupService.GetProductCategories();
+            return await this.lookupService.GetProductCategoriesAsync();
         }
 
         [HttpGet]
         [Route("roles")]
-        public IEnumerable<RoleDto> GetRoles()
+        public async Task<IEnumerable<RoleDto>> GetRolesAsync()
         {
-            return this.lookupService.GetRoles();
+            return await this.lookupService.GetRolesAsync();
         }
 
         [HttpGet]

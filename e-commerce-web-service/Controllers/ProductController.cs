@@ -21,11 +21,38 @@ namespace e_commerce_web_service.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult> Add([FromBody] ProductDto productDto)
+        public async Task<ActionResult> Add([FromForm] ProductDto productDto)
         {
-            await this.prodcutService.AddProductAsync(productDto);
+            try
+            {
+                string fileName = string.Empty;
+                // Create folder path
+                var productsFolder = Path.Combine(hostEnvironment.ContentRootPath, "Uploads", "Products");
+                if (!Directory.Exists(productsFolder))
+                {
+                    Directory.CreateDirectory(productsFolder);
+                }
 
-            return Ok();
+                foreach (IFormFile file in productDto.ImageFiles)
+                {
+                    fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    var filePath = Path.Combine(productsFolder, fileName);
+                    // Save file to server
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }
+
+                productDto.ImageUrl = "Products/" + fileName;
+                await this.prodcutService.AddProductAsync(productDto);
+
+                return Ok(new { message = "Product added successfully." });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
         }
 
         [HttpGet]
@@ -69,6 +96,5 @@ namespace e_commerce_web_service.Controllers
 
             return Ok(products);
         }
-
     }
 }

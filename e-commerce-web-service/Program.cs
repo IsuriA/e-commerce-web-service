@@ -5,6 +5,7 @@ using e_commerce_web.model.Models;
 using e_commerce_web.service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
@@ -77,6 +78,13 @@ if (app.Environment.IsDevelopment())
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+var contentRoot = builder.Configuration.GetValue<string>(WebHostDefaults.ContentRootKey);
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(contentRoot, "Uploads")),
+    RequestPath = "/assets"
+});
 
 app.UseAuthorization();
 

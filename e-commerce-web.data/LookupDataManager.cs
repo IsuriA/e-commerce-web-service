@@ -39,11 +39,11 @@ namespace e_commerce_web.data
             return inquiryStatuses ?? new List<InquiryStatus>();
         }
 
-        public IEnumerable<Category> GetProductCategories()
+        public async Task<IEnumerable<Category>> GetProductCategoriesAsync()
         {
             if (!memoryCache.TryGetValue(LookupCacheKeys.ProductCategories, out IEnumerable<Category> categories))
             {
-                categories = this.context.Categories;
+                categories = await this.context.Categories.ToListAsync();
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromHours(1));
@@ -54,11 +54,11 @@ namespace e_commerce_web.data
             return categories ?? new List<Category>();
         }
 
-        public IEnumerable<Role> GetRoles()
+        public async Task<IEnumerable<Role>> GetRolesAsync()
         {
             if (!memoryCache.TryGetValue(LookupCacheKeys.UserRoles, out IEnumerable<Role> roles))
             {
-                roles = this.context.Roles;
+                roles = await this.context.Roles.ToListAsync();
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromHours(1));

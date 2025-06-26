@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using e_commerce_web.model.Models;
+﻿using e_commerce_web.model.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_web.data
@@ -28,19 +23,17 @@ namespace e_commerce_web.data
             return await this.context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
+                .OrderByDescending(p => p.CreatedAt)
                 .ToListAsync();
         }
     
         public async Task<IEnumerable<Product>> GetProductsByBrandAsync(int brandId)
         {
-
             return await this.context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
                 .Where(p => p.BrandId == brandId)
                 .ToListAsync();
         }
-
-
     }
 }

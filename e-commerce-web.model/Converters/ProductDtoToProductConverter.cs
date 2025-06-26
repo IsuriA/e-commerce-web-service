@@ -20,6 +20,7 @@ namespace e_commerce_web.model.Converters
             destination.Price = source.Price;
             destination.Quantity = source.Quantity;
             destination.CategoryId = source.Category?.Id ?? throw new ArgumentNullException(nameof(ProductDto.Category));
+            destination.BrandId = source.Brand?.Id ?? throw new ArgumentNullException(nameof(ProductDto.Brand));
             destination.ImageUrl = source.ImageUrl;
 
             return destination;

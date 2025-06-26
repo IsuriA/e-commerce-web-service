@@ -1,5 +1,9 @@
 e-commerce-web-service/bin
 e-commerce-web-service/obj
+e-commerce-web-service/Uploads
+e-commerce-web-service/appsettings.json
+e-commerce-web-service/appsettings.Development.json
+e-commerce-web-service/Properties/launchSettings.json
 
 e-commerce-web.model/bin
 e-commerce-web.model/obj

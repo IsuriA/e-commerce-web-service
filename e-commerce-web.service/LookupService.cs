@@ -27,15 +27,15 @@ namespace e_commerce_web.service
             this.httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         }
 
-        public IEnumerable<CategoryDto> GetProductCategories()
+        public async Task<IEnumerable<CategoryDto>> GetProductCategoriesAsync()
         {
-            IEnumerable<Category> categories = this.lookupDataManager.GetProductCategories();
+            IEnumerable<Category> categories = await this.lookupDataManager.GetProductCategoriesAsync();
             return categories.Select(c => this.mapper.Map<CategoryDto>(c));
         }
 
-        public IEnumerable<RoleDto> GetRoles()
+        public async Task<IEnumerable<RoleDto>> GetRolesAsync()
         {
-            IEnumerable<Role> roles = this.lookupDataManager.GetRoles();
+            IEnumerable<Role> roles = await this.lookupDataManager.GetRolesAsync();
 
             return roles.Select(c => this.mapper.Map<RoleDto>(c));
         }

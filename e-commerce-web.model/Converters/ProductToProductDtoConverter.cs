@@ -29,6 +29,7 @@ namespace e_commerce_web.model.Converters
             destination.Quantity = source.Quantity;
             destination.ImageUrl = source.ImageUrl;
             destination.Brand = new BrandDto { Id = source.Brand.Id, Name = source.Brand.Name };
+            destination.CreatedAt = source.CreatedAt;
 
             return destination;
         }

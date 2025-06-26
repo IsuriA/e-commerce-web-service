@@ -263,17 +263,10 @@ public partial class ECommerceDbContext : DbContext
                 .HasForeignKey(d => d.PromotionId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_dbo.Product_PromotionId");
-              /*
-            entity.HasOne(d => d.Supplier).WithMany(p => p.ProductSuppliers)
-                .HasForeignKey(d => d.SupplierId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_dbo.Product_SupplierId");
 
-            entity.HasOne(d => d.User).WithMany(p => p.ProductUsers)
-                .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_dbo.Product_UserId");
-              */
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
         });
 
         modelBuilder.Entity<Promotion>(entity =>

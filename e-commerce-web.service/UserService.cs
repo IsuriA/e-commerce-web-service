@@ -49,7 +49,7 @@ namespace e_commerce_web.service
             UserDto dto = this.mapper.Map<UserDto>(user);
             int userRoleId = user.UserRoleUsers.FirstOrDefault()?.RoleId
                 ?? throw new ApplicationException("User doesn't have any role assigned");
-            Role role = this.lookupDataManager.GetRoles().First(r => r.Id == userRoleId);
+            Role role = (await this.lookupDataManager.GetRolesAsync()).First(r => r.Id == userRoleId);
 
             dto.Role = this.mapper.Map<RoleDto>(role);
 
