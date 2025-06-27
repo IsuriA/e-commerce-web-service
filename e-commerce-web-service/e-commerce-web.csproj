@@ -25,4 +25,9 @@
     <ProjectReference Include="..\e-commerce-web.service\e-commerce-web.service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\Brands\" />
+    <Folder Include="Uploads\Products\" />
+  </ItemGroup>
+
 </Project>

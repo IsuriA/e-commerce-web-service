@@ -19,6 +19,7 @@ namespace e_commerce_web.model.Converters
 
             destination.Id = source.Id;
             destination.Name = source.Name;
+            destination.ImageUrl = source.ImageUrl;
 
             return destination;
         }
