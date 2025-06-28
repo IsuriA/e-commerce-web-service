@@ -31,8 +31,8 @@ namespace e_commerce_web.service
             try
             {
                 Inquiry inqueryModel = this._mapper.Map<Inquiry>(inquiry);
-                int newInquiryStatusId = 1;//this.lookupDataManager.GetInqiryStatuses().FirstOrDefault()?.Id
-                   // ?? throw new ApplicationException($"{nameof(InquiryStatus)} NEW is not configured");
+                int newInquiryStatusId = (await this.lookupDataManager.GetInqiryStatusesAsync()).FirstOrDefault()?.Id
+                   ?? throw new ApplicationException($"{nameof(InquiryStatus)} NEW is not configured");
                 inqueryModel.StatusId = newInquiryStatusId;
 
                 await this.inquiryDataManager.AddNewInquiryAsync(inqueryModel);
