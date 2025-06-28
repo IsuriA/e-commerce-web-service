@@ -19,7 +19,6 @@ namespace e_commerce_web_service.Controllers
 
         [HttpGet]
         [Route("productCategories")]
-        [Authorize]
         public async Task<IEnumerable<CategoryDto>> GetProductCategoriesAsync()
         {
             return await this.lookupService.GetProductCategoriesAsync();

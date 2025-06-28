@@ -61,40 +61,21 @@ namespace e_commerce_web_service.Controllers
             return await this.prodcutService.GetAll();
         }
 
-        [HttpPost("upload-image")]
-        public async Task<IActionResult> UploadImage(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-                return BadRequest("No file uploaded.");
-
-            // Create folder path
-            var uploadFolder = Path.Combine(hostEnvironment.WebRootPath, "uploads");
-            if (!Directory.Exists(uploadFolder))
-            {
-                Directory.CreateDirectory(uploadFolder);
-            }
-
-            // Create unique file name
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            var filePath = Path.Combine(uploadFolder, fileName);
-
-            // Save file to server
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
-
-            // Return relative path for front-end usage
-            var relativePath = $"uploads/{fileName}";
-            return Ok(new { imageUrl = relativePath });
-        }
-
         [HttpGet("brand/{brandId}")]
         public async Task<IActionResult> GetProductsByBrand(int brandId)
         {
-            var products = await this.prodcutService.GetProductsByBrandAsync(brandId);   
+            var products = await this.prodcutService.GetProductsByBrandAsync(brandId);
 
             return Ok(products);
+        }
+
+        [HttpGet("category/{categoryid}")]
+        public async Task<IActionResult> GetProductsByCategory(int categoryId)
+        {
+            var products = await this.prodcutService.GetProductsByCategoryAsync(categoryId);
+
+            return Ok(products);
+
         }
     }
 }
