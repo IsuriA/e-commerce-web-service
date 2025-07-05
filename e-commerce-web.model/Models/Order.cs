@@ -13,7 +13,7 @@ public partial class Order
 
     public int UserId { get; set; }
 
-    public int DeliveryPersonId { get; set; }
+    public int? DeliveryPersonId { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

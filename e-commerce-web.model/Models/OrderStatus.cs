@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace e_commerce_web.model.Models;
+﻿namespace e_commerce_web.model.Models;
 
 public partial class OrderStatus
 {
     public int Id { get; set; }
+
+    public string Code { get; set; } = null!;
 
     public string Name { get; set; } = null!;
 

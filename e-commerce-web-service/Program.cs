@@ -4,7 +4,6 @@ using e_commerce_web.model;
 using e_commerce_web.model.Models;
 using e_commerce_web.service;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
@@ -20,15 +19,17 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 builder.Services.AddDbContext<ECommerceDbContext>(options =>
    options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<UserDataManager>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<InquiryDataManager>();
 builder.Services.AddScoped<InquiryService>();
-builder.Services.AddScoped<ProductDataManager>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<LookupService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<UserService>();
 
 builder.Services.AddScoped<LookupDataManager>();
+builder.Services.AddScoped<InquiryDataManager>();
+builder.Services.AddScoped<ProductDataManager>();
+builder.Services.AddScoped<OrderDataManager>();
+builder.Services.AddScoped<UserDataManager>();
 
 // Add services to the container.
 
@@ -55,8 +56,6 @@ var mapperConfig = new MapperConfiguration(mc =>
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddMemoryCache();
-
-
 
 var app = builder.Build();
 app.UseCors(options =>

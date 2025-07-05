@@ -11,10 +11,11 @@ namespace e_commerce_web.data
 
         private enum LookupCacheKeys
         {
+            Brands,
             InquiryStatuses,
+            OrderStatus,
             ProductCategories,
             UserRoles,
-            Brands
         }
 
         public LookupDataManager(ECommerceDbContext dbContext,
@@ -82,6 +83,21 @@ namespace e_commerce_web.data
             }
 
             return brands ?? new List<Brand>();
+        }
+
+        public async Task<IEnumerable<OrderStatus>> GetOrderStatusesAsync()
+        {
+            if (!memoryCache.TryGetValue(LookupCacheKeys.OrderStatus, out IEnumerable<OrderStatus> orderStatus))
+            {
+                orderStatus = await this.context.OrderStatuses.ToListAsync();
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromHours(1));
+
+                memoryCache.Set(LookupCacheKeys.OrderStatus, orderStatus, cacheEntryOptions);
+            }
+
+            return orderStatus ?? new List<OrderStatus>();
         }
     }
 }
