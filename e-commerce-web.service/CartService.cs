@@ -7,21 +7,21 @@ using Microsoft.AspNetCore.Http;
 
 namespace e_commerce_web.service
 {
-    public class ProductService
+    public class CartService
     {
-        private ProductDataManager productDataManager;
+        private CartDataManager cartDataManager;
         private readonly LookupDataManager lookupDataManager;
         private readonly AppSettings _appSettings;
         private readonly IMapper mapper;
         private readonly IHttpContextAccessor httpContextAccessor;
 
-        public ProductService(
-            ProductDataManager productDataManager,
+        public CartService(
+            CartDataManager cartDataManager,
             IHttpContextAccessor httpContextAccessor,
             LookupDataManager lookupDataManager,
             IMapper mapper)
         {
-            this.productDataManager = productDataManager ?? throw new ArgumentNullException(nameof(productDataManager));
+            this.cartDataManager = cartDataManager ?? throw new ArgumentNullException(nameof(cartDataManager));
             this.lookupDataManager = lookupDataManager ?? throw new ArgumentNullException(nameof(lookupDataManager));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             this.httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
@@ -36,7 +36,7 @@ namespace e_commerce_web.service
                 UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
                 productModel.UserId = user.Id;
 
-                await this.productDataManager.AddNewProductAsync(productModel);
+                await this.cartDataManager.AddNewProductAsync(productModel);
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace e_commerce_web.service
 
         public async Task<IEnumerable<ProductDto>> GetAll()
         {
-            IEnumerable<Product> products = await this.productDataManager.GetProductsAsync();
+            IEnumerable<Product> products = await this.cartDataManager.GetProductsAsync();
 
             return products.Select(x =>
             {
@@ -58,26 +58,24 @@ namespace e_commerce_web.service
 
         public async Task<IEnumerable<ProductDto>> GetProductsByBrandAsync(int brandId)
         {
-            IEnumerable<Product> products = await this.productDataManager.GetProductsByBrandAsync(brandId);
+            IEnumerable<Product> products = await this.cartDataManager.GetProductsByBrandAsync(brandId);
 
             return products.Select(x =>
             {
                 ProductDto dto = this.mapper.Map<ProductDto>(x);
                 dto.Category = this.mapper.Map<CategoryDto>(x.Category);
-
                 return dto;
             });
         }
 
         public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int categoryId)
         {
-            IEnumerable<Product> products = await this.productDataManager.GetProductsByCategoryAsync(categoryId);
+            IEnumerable<Product> products = await this.cartDataManager.GetProductsByCategoryAsync(categoryId);
 
             return products.Select(x =>
             {
                 ProductDto dto = this.mapper.Map<ProductDto>(x);
                 dto.Category = this.mapper.Map<CategoryDto>(x.Category);
-
                 return dto;
             });
         }

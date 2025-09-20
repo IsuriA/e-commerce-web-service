@@ -1,12 +1,8 @@
-﻿namespace e_commerce_web.model.Models;
+﻿using e_commerce_web.core.DTOs;
 
-public class CategoryDto
+namespace e_commerce_web.core.Models;
+
+public class CategoryDto : LookupDto
 {
-    public int Id { get; set; }
-
-    public string Code { get; set; }
-
-    public string Name { get; set; }
-
     public string? Description { get; set; }
 }

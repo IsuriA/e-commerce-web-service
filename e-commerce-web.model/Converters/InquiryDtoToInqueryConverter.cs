@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using e_commerce_web.model.DTOs;
-using e_commerce_web.model.Models;
+using e_commerce_web.core.DTOs;
+using e_commerce_web.core.Models;
 
-namespace e_commerce_web.model.Converters
+namespace e_commerce_web.core.Converters
 {
     public class InquiryDtoToInqueryConverter : ITypeConverter<InquiryDto, Inquiry>
     {

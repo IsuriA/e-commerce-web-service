@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CartDatamanager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\e-commerce-web.model\e-commerce-web.core.csproj" />
   </ItemGroup>
 

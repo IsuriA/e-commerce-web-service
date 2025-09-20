@@ -1,6 +1,6 @@
 ﻿namespace e_commerce_web.core.DTOs
 {
-    public class InquiryStatusDto : LookupDto
+    public class OrderStatusDto : LookupDto
     {
     }
 }

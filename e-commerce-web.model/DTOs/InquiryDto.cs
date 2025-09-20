@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace e_commerce_web.model.DTOs
+namespace e_commerce_web.core.DTOs
 {
     public class InquiryDto
     {

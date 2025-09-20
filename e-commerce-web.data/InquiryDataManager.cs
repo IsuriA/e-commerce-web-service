@@ -1,4 +1,4 @@
-﻿using e_commerce_web.model.Models;
+﻿using e_commerce_web.core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_web.data

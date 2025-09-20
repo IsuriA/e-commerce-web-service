@@ -1,4 +1,4 @@
-﻿using e_commerce_web.model.Models;
+﻿using e_commerce_web.core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_web.data
@@ -26,6 +26,12 @@ namespace e_commerce_web.data
                 .FirstOrDefaultAsync(o => o.UserId == userId && o.StatusId == orderStatusId);
         }
 
+        public async Task<List<OrderProduct>> GetOrderItemsByOrderIdAsync(int orderId)
+        {
+            return await this.context.OrderProducts.Include(op => op.Product).Include(op => op.Product.Brand)
+                .Where(o => o.OrderId == orderId).ToListAsync();
+        }
+
         public async Task<Order> CreateNewOrder(Order newOrder)
         {
             await this.context.Orders.AddAsync(newOrder);
@@ -34,8 +40,21 @@ namespace e_commerce_web.data
             return newOrder;
         }
 
-        public async Task AddItemToOrder(OrderProduct ordeItem) {
-            await this.context.OrderProducts.AddAsync(ordeItem);
+        public async Task AddUpdateItemToOrder(OrderProduct orderItem)
+        {
+            if (orderItem.Id == 0)
+            {
+                await this.context.OrderProducts.AddAsync(orderItem);
+            }
+
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task RemoveProductFromOrder(OrderProduct orderProduct)
+        {
+
+
+            this.context.OrderProducts.Remove(orderProduct);
             await this.context.SaveChangesAsync();
         }
     }

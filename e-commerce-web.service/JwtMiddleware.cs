@@ -2,8 +2,8 @@
 using System.Text;
 using AutoMapper;
 using e_commerce_web.model;
-using e_commerce_web.model.DTOs;
-using e_commerce_web.model.Models;
+using e_commerce_web.core.DTOs;
+using e_commerce_web.core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;

@@ -1,4 +1,4 @@
-﻿namespace e_commerce_web.model.Models;
+﻿namespace e_commerce_web.core.Models;
 
 public partial class OrderStatus
 {

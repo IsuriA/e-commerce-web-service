@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace e_commerce_web.model.Models;
+namespace e_commerce_web.core.Models;
 
 public partial class ECommerceDbContext : DbContext
 {
@@ -181,6 +181,10 @@ public partial class ECommerceDbContext : DbContext
                 .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_dbo.order_product_ProductId");
+
+            entity.Property(e => e.Quantity)
+                .HasDefaultValueSql("0")
+                .HasColumnType("int");
         });
 
         modelBuilder.Entity<OrderStatus>(entity =>

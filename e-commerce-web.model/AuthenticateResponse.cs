@@ -1,4 +1,4 @@
-﻿using e_commerce_web.model.DTOs;
+﻿using e_commerce_web.core.DTOs;
 
 namespace e_commerce_web.model
 {

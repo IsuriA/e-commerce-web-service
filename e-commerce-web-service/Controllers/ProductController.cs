@@ -1,8 +1,8 @@
-﻿using e_commerce_web.model.Models;
+﻿using e_commerce_web.core.Models;
 using e_commerce_web.service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using e_commerce_web.model.DTOs;
+using e_commerce_web.core.DTOs;
 
 namespace e_commerce_web_service.Controllers
 {

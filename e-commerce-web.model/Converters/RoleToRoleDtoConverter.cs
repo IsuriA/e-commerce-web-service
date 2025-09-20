@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using e_commerce_web.model.Models;
+using e_commerce_web.core.Models;
 
-namespace e_commerce_web.model.Converters
+namespace e_commerce_web.core.Converters
 {
     public class RoleToRoleDtoConverter : ITypeConverter<Role, RoleDto>
     {

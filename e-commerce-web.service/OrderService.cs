@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using e_commerce_web.data;
-using e_commerce_web.model.DTOs;
-using e_commerce_web.model.Models;
+using e_commerce_web.core.DTOs;
+using e_commerce_web.core.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace e_commerce_web.service
@@ -29,30 +29,86 @@ namespace e_commerce_web.service
         public async Task<int> GetItemCountAsync()
         {
             UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
-            Order currentOrder = await this.GetCreateOrder(user.Id);
+            Order currentOrder = await this.GetCreateNewOrder(user.Id);
 
-            return await orderDataManager.GetItemCountInCartAsync(user.Id, currentOrder.Id);
+            return await this.orderDataManager.GetItemCountInCartAsync(user.Id, currentOrder.Id);
+        }
+
+        public async Task<OrderDto> GetCurrentOrderAsync()
+        {
+            UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
+            Order pendingOrderModel = await this.GetCreateNewOrder(user.Id);
+            OrderDto pendingOrderDto = this.mapper.Map<OrderDto>(pendingOrderModel);
+
+            List<OrderProduct> orderItemModels = await this.orderDataManager.GetOrderItemsByOrderIdAsync(pendingOrderModel.Id);
+            pendingOrderDto.Items = orderItemModels.Select(obj =>
+            {
+                OrderItemDto itemDto = this.mapper.Map<OrderItemDto>(obj);
+                itemDto.Product = this.mapper.Map<ProductDto>(obj.Product);
+
+                return itemDto;
+            })
+                .ToList();
+
+            return pendingOrderDto;
         }
 
         public async Task AddProductToOrder(int productId)
         {
             UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
-            Order currentOrder = await this.GetCreateOrder(user.Id);
+            Order currentOrder = await this.GetCreateNewOrder(user.Id);
 
-            await this.orderDataManager.AddItemToOrder(new OrderProduct
+            List<OrderProduct> orderItemModels = await this.orderDataManager.GetOrderItemsByOrderIdAsync(currentOrder.Id);
+            OrderProduct orderProduct = orderItemModels.FirstOrDefault(obj => obj.ProductId == productId);
+            if (orderProduct != null)
             {
-                OrderId = currentOrder.Id,
-                ProductId = productId,
-            });
+                orderProduct.Quantity++;
+            }
+            else
+            {
+                orderProduct = new OrderProduct
+                {
+                    OrderId = currentOrder.Id,
+                    ProductId = productId,
+                    Quantity = 1
+                };
+            }
+
+            await this.orderDataManager.AddUpdateItemToOrder(orderProduct);
         }
 
-        private async Task<Order> GetCreateOrder(int userId) {
+        public async Task UpdateQuantity(int productId, int quantity)
+        {
+            UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
+            Order currentOrder = await this.GetCreateNewOrder(user.Id);
+
+            List<OrderProduct> orderItemModels = await this.orderDataManager.GetOrderItemsByOrderIdAsync(currentOrder.Id);
+            OrderProduct orderProduct = orderItemModels.FirstOrDefault(obj => obj.ProductId == productId);
+
+            if (orderProduct != null)
+            {
+                orderProduct.Quantity = orderProduct.Quantity + quantity;
+
+                if (orderProduct.Quantity == 0) {
+                    await this.orderDataManager.RemoveProductFromOrder(orderProduct);
+                }
+                else
+                {
+                    await this.orderDataManager.AddUpdateItemToOrder(orderProduct);
+                }
+
+            }
+        }
+
+        private async Task<Order> GetCreateNewOrder(int userId)
+        {
             int newOrderStatusId = (await this.lookupDataManager.GetOrderStatusesAsync())
                 .FirstOrDefault(os => os.Code.Equals(NEW_ORDER_STATUS_CODE, StringComparison.InvariantCultureIgnoreCase))?.Id
                   ?? throw new ApplicationException($"{nameof(OrderStatus)} NEW is not configured");
 
             Order pendingOrder = await this.orderDataManager.GetOrderForUserByStatus(userId, newOrderStatusId);
-            if (pendingOrder != null) {
+            if (pendingOrder != null)
+            {
                 return pendingOrder;
             }
 
@@ -62,5 +118,6 @@ namespace e_commerce_web.service
                 StatusId = newOrderStatusId,
             });
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using e_commerce_web.model.Models;
+﻿using e_commerce_web.core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 

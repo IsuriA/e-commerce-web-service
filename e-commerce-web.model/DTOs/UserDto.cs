@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using e_commerce_web.model.Models;
+﻿using e_commerce_web.core.Models;
 
-namespace e_commerce_web.model.DTOs
+namespace e_commerce_web.core.DTOs
 {
     public class UserDto
     {
