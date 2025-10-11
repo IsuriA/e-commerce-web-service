@@ -47,10 +47,29 @@ namespace e_commerce_web.service
                 itemDto.Product = this.mapper.Map<ProductDto>(obj.Product);
 
                 return itemDto;
-            })
-                .ToList();
+            }).ToList();
 
             return pendingOrderDto;
+        }
+
+        public async Task<List<OrderDto>> GetPaymentDueOrders()
+        {
+            List<OrderProduct> orderItemModels = await this.orderDataManager.GetPaymentDueOrders();
+
+            return orderItemModels.GroupBy(o => o.Order).Select(o =>
+            {
+                OrderDto orderDto = this.mapper.Map<OrderDto>(o.Key);
+                orderDto.User = this.mapper.Map<UserDto>(o.Key.User);
+                orderDto.Items = orderItemModels.Select(obj =>
+                {
+                    OrderItemDto itemDto = this.mapper.Map<OrderItemDto>(obj);
+                    itemDto.Product = this.mapper.Map<ProductDto>(obj.Product);
+
+                    return itemDto;
+                }).ToList();
+
+                return orderDto;
+            }).ToList();
         }
 
         public async Task AddProductToOrder(int productId)
@@ -89,14 +108,14 @@ namespace e_commerce_web.service
             {
                 orderProduct.Quantity = orderProduct.Quantity + quantity;
 
-                if (orderProduct.Quantity == 0) {
+                if (orderProduct.Quantity == 0)
+                {
                     await this.orderDataManager.RemoveProductFromOrder(orderProduct);
                 }
                 else
                 {
                     await this.orderDataManager.AddUpdateItemToOrder(orderProduct);
                 }
-
             }
         }
 
@@ -104,7 +123,7 @@ namespace e_commerce_web.service
         {
             int newOrderStatusId = (await this.lookupDataManager.GetOrderStatusesAsync())
                 .FirstOrDefault(os => os.Code.Equals(NEW_ORDER_STATUS_CODE, StringComparison.InvariantCultureIgnoreCase))?.Id
-                  ?? throw new ApplicationException($"{nameof(OrderStatus)} NEW is not configured");
+                ?? throw new ApplicationException($"{nameof(OrderStatus)} NEW is not configured");
 
             Order pendingOrder = await this.orderDataManager.GetOrderForUserByStatus(userId, newOrderStatusId);
             if (pendingOrder != null)
@@ -118,6 +137,5 @@ namespace e_commerce_web.service
                 StatusId = newOrderStatusId,
             });
         }
-
     }
 }

@@ -10,11 +10,11 @@ public partial class OrderDto
 
     public decimal Amount { get; set; }
 
-    public User User { get; set; }
+    public UserDto User { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
-    public User DeliveryPerson { get; set; }
+    public UserDto DeliveryPerson { get; set; }
 
     public List<OrderItemDto> Items { get; set; }
 }

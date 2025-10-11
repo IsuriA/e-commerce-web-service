@@ -42,6 +42,15 @@ namespace e_commerce_web_service.Controllers
             return Ok(currentOrder);
         }
 
+        [HttpGet("paymentDueOrders")]
+        [Authorize]
+        public async Task<ActionResult> GetPaymentDueOrders()
+        {
+            List<OrderDto> dueOrders = await this.orderService.GetPaymentDueOrders();
+
+            return Ok(dueOrders);
+        }
+
 
         [HttpPost("addToOrder/{productId}")]
         [Authorize]
@@ -57,6 +66,7 @@ namespace e_commerce_web_service.Controllers
         public async Task<ActionResult> UpdateQuantity(int productId, int quantity)
         {
             await this.orderService.UpdateQuantity(productId,quantity);
+
             return Ok();
         }
 

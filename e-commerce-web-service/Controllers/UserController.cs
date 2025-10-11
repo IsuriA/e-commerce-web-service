@@ -37,7 +37,6 @@ namespace e_commerce_web_service.Controllers
         }
 
         [HttpPost("register")]
-        //[Authorize]
         public async Task<IActionResult> Register([FromBody] UserDto dto)
         {
             var user = await this.userService.RegisterAsync(dto);
