@@ -245,6 +245,10 @@ public partial class ECommerceDbContext : DbContext
         {
             entity.ToTable("payment_method");
 
+            entity.Property(e => e.Code)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);

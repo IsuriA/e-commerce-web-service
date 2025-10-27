@@ -18,7 +18,8 @@ namespace e_commerce_web.model
             CreateMap<Product, ProductDto>().ConvertUsing<ProductToProductDtoConverter>();
             CreateMap<Brand, BrandDto>().ConvertUsing<BrandToBrandDtoConverter>();
             CreateMap<Order, OrderDto>().ConvertUsing<OrderToOrderDtoConverter>();
-            CreateMap<OrderProduct, OrderItemDto>().ConvertUsing<OrderProductToOrderItemDtoConverter>(); 
+            CreateMap<OrderProduct, OrderItemDto>().ConvertUsing<OrderProductToOrderItemDtoConverter>();
+            CreateMap<PaymentMethod, PaymentMethodDto>().ConvertUsing<PaymentMethodToPaymentMethodDtoConverter>();
         }
     }
 }

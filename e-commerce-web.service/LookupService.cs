@@ -46,5 +46,12 @@ namespace e_commerce_web.service
 
             return brands.Select(c => this.mapper.Map<BrandDto>(c));
         }
+
+        public async Task<IEnumerable<PaymentMethodDto>> GetPaymentMethodsAsync()
+        {
+            IEnumerable<PaymentMethod> brands = await this.lookupDataManager.GetPaymentMethodsAsync();
+
+            return brands.Select(c => this.mapper.Map<PaymentMethodDto>(c));
+        }
     }
 }

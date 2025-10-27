@@ -20,6 +20,14 @@ namespace e_commerce_web.data
                 .CountAsync();
         }
 
+        public async Task<List<OrderProduct>> GetPaymentDueOrders()
+        {
+            return await this.context.OrderProducts
+                .Include(op => op.Order)
+                .Include(op => op.Order.User)
+                .ToListAsync();
+        }
+
         public async Task<Order> GetOrderForUserByStatus(int userId, int orderStatusId)
         {
             return await this.context.Orders
@@ -52,8 +60,6 @@ namespace e_commerce_web.data
 
         public async Task RemoveProductFromOrder(OrderProduct orderProduct)
         {
-
-
             this.context.OrderProducts.Remove(orderProduct);
             await this.context.SaveChangesAsync();
         }

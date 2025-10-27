@@ -37,5 +37,12 @@ namespace e_commerce_web_service.Controllers
         {
             return await this.lookupService.GetBrandsAsync();
         }
+
+        [HttpGet]
+        [Route("paymentMethods")]
+        public async Task<IEnumerable<PaymentMethodDto>> GetPaymentMethodsAsync()
+        {
+            return await this.lookupService.GetPaymentMethodsAsync();
+        }
     }
 }

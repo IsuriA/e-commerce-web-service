@@ -14,6 +14,7 @@ namespace e_commerce_web.data
             Brands,
             InquiryStatuses,
             OrderStatus,
+            PaymentMethods,
             ProductCategories,
             UserRoles,
         }
@@ -98,6 +99,21 @@ namespace e_commerce_web.data
             }
 
             return orderStatus ?? new List<OrderStatus>();
+        }
+
+        public async Task<IEnumerable<PaymentMethod>> GetPaymentMethodsAsync()
+        {
+            if (!memoryCache.TryGetValue(LookupCacheKeys.PaymentMethods, out IEnumerable<PaymentMethod> paymentMethods))
+            {
+                paymentMethods = await this.context.PaymentMethods.ToListAsync();
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromHours(1));
+
+                memoryCache.Set(LookupCacheKeys.PaymentMethods, paymentMethods, cacheEntryOptions);
+            }
+
+            return paymentMethods ?? new List<PaymentMethod>();
         }
     }
 }
