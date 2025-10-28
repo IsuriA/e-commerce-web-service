@@ -40,7 +40,7 @@ namespace e_commerce_web.data
                 .Where(o => o.OrderId == orderId).ToListAsync();
         }
 
-        public async Task<Order> CreateNewOrder(Order newOrder)
+        public async Task<Order> CreateNewOrderAsync(Order newOrder)
         {
             await this.context.Orders.AddAsync(newOrder);
             await this.context.SaveChangesAsync();
@@ -61,6 +61,20 @@ namespace e_commerce_web.data
         public async Task RemoveProductFromOrder(OrderProduct orderProduct)
         {
             this.context.OrderProducts.Remove(orderProduct);
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task CheckoutAsync(Payment payment)
+        {
+            await this.context.Payments.AddAsync(payment);
+            await this.context.SaveChangesAsync();
+        }
+
+        public async Task UpdateOrderStatusAsync(int orderId, int orderStatusId)
+        {
+            Order order = await this.context.Orders
+                .FirstAsync(o => o.Id == orderId);
+            order.StatusId = orderStatusId;
             await this.context.SaveChangesAsync();
         }
     }

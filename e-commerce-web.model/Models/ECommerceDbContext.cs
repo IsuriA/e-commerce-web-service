@@ -229,16 +229,27 @@ public partial class ECommerceDbContext : DbContext
         modelBuilder.Entity<Payment>(entity =>
         {
             entity.ToTable("payment");
+            entity.HasKey(e => e.Id).HasName("PK_payment");
 
-            entity.Property(e => e.PaymentId)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-            entity.Property(e => e.Method)
+            entity.Property(e => e.Reference)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.HasOne(d => d.Method).WithMany(p => p.Payments)
+                .HasForeignKey(d => d.MethodId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_dbo.payment_MethodId");
+            entity.HasOne(d => d.User).WithMany(p => p.Payments)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_dbo.payment_UserId");
             entity.Property(e => e.OrderId)
                 .HasMaxLength(20)
                 .IsUnicode(false);
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Amount).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.SpecialInstructions).HasColumnType("text");
         });
 
         modelBuilder.Entity<PaymentMethod>(entity =>

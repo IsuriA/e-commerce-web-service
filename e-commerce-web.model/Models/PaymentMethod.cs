@@ -10,4 +10,6 @@ public partial class PaymentMethod
     public string Code { get; set; } = null!;
 
     public string Name { get; set; } = null!;
+
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }

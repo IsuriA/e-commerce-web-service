@@ -20,6 +20,7 @@ namespace e_commerce_web.model
             CreateMap<Order, OrderDto>().ConvertUsing<OrderToOrderDtoConverter>();
             CreateMap<OrderProduct, OrderItemDto>().ConvertUsing<OrderProductToOrderItemDtoConverter>();
             CreateMap<PaymentMethod, PaymentMethodDto>().ConvertUsing<PaymentMethodToPaymentMethodDtoConverter>();
+            CreateMap<CheckoutDto, Payment>().ConvertUsing<CheckoutDtoToPaymentConverter>();
         }
     }
 }

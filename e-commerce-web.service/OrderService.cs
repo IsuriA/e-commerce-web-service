@@ -131,11 +131,49 @@ namespace e_commerce_web.service
                 return pendingOrder;
             }
 
-            return await this.orderDataManager.CreateNewOrder(new Order
+            return await this.orderDataManager.CreateNewOrderAsync(new Order
             {
                 UserId = userId,
                 StatusId = newOrderStatusId,
             });
+        }
+
+        public async Task CheckoutAsync(CheckoutDto dto)
+        {
+            UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
+            Payment paymentModel = this.mapper.Map<Payment>(dto);
+
+            paymentModel.MethodId = (await this.lookupDataManager.GetPaymentMethodsAsync())
+                .FirstOrDefault(os => os.Code.Equals(dto.PaymentMethod, StringComparison.InvariantCultureIgnoreCase))?.Id
+                ?? throw new ApplicationException($"{nameof(PaymentMethod)} {dto.PaymentMethod} is not configured");
+            paymentModel.UserId = user.Id;
+
+            int processingOrderStatusId = (await this.lookupDataManager.GetOrderStatusesAsync())
+                .FirstOrDefault(os => os.Code.Equals("PROCESSING", StringComparison.InvariantCultureIgnoreCase))?.Id
+                ?? throw new ApplicationException($"{nameof(OrderStatus)} PROCESSING is not configured");
+
+            if (dto.PaymentMethod == "PAY_NOW")
+            {
+                paymentModel.DueDate = DateTime.Now;
+                paymentModel.Installment = 1;
+                paymentModel.Amount = dto.Total;
+                await orderDataManager.CheckoutAsync(paymentModel);
+                await orderDataManager.UpdateOrderStatusAsync(paymentModel.OrderId, processingOrderStatusId);
+                return;
+            }
+
+            DateTime dueDate = DateTime.Now;
+            for (int i = 1; i <= dto.Installments; i++)
+            {
+                dueDate = dueDate.AddMonths(1);
+                paymentModel.DueDate = dueDate;
+                paymentModel.Installment = i;
+                paymentModel.Id = 0;
+                paymentModel.Amount = dto.Total / dto.Installments;
+                await orderDataManager.CheckoutAsync(paymentModel);
+            }
+
+            await orderDataManager.UpdateOrderStatusAsync(paymentModel.OrderId, processingOrderStatusId);
         }
     }
 }

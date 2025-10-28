@@ -1,4 +1,5 @@
-﻿using e_commerce_web.core.Models;
+﻿using e_commerce_web.core.DTOs;
+using e_commerce_web.core.Models;
 using e_commerce_web.service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -70,5 +71,12 @@ namespace e_commerce_web_service.Controllers
             return Ok();
         }
 
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Register([FromBody] CheckoutDto dto)
+        {
+            await this.orderService.CheckoutAsync(dto);
+
+            return Ok(new { message = "Order checked out successfully." });
+        }
     }
 }
