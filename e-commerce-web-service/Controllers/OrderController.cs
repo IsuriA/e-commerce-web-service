@@ -78,5 +78,14 @@ namespace e_commerce_web_service.Controllers
 
             return Ok(new { message = "Order checked out successfully." });
         }
+
+        [HttpGet("{orderId}")]
+        [Authorize]
+        public async Task<ActionResult> GetById(int orderId)
+        {
+            OrderDto order = await this.orderService.GetOrderByIdAsync(orderId);
+
+            return Ok(order);
+        }
     }
 }

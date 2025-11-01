@@ -29,7 +29,8 @@ namespace e_commerce_web.data
 
         public async Task<User> GetByIdAsync(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Users.Include(u => u.UserRoleUsers)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<User?> GetUserByUsernameAsync(string username)

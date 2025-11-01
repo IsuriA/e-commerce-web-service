@@ -34,6 +34,18 @@ namespace e_commerce_web.data
                 .FirstOrDefaultAsync(o => o.UserId == userId && o.StatusId == orderStatusId);
         }
 
+        public async Task<Order> GetOrderById(int orderId, int? userId)
+        {
+            IQueryable<Order> orderQuery = this.context.Orders
+                .Where(o => o.Id == orderId).AsQueryable();
+
+            if (userId != null) {
+                orderQuery.Where(o => o.UserId == userId);
+            }
+
+            return await orderQuery.FirstOrDefaultAsync();
+        }
+
         public async Task<List<OrderProduct>> GetOrderItemsByOrderIdAsync(int orderId)
         {
             return await this.context.OrderProducts.Include(op => op.Product).Include(op => op.Product.Brand)

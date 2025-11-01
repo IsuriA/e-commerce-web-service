@@ -52,6 +52,31 @@ namespace e_commerce_web.service
             return pendingOrderDto;
         }
 
+        public async Task<OrderDto> GetOrderByIdAsync(int orderId)
+        {
+            UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
+            Role role = (await this.lookupDataManager.GetRolesAsync()).First(r => r.Id == user.Role.Id);
+            RoleDto roleDto = this.mapper.Map<RoleDto>(role);
+            Order orderModel = await this.orderDataManager.GetOrderById(orderId, roleDto.AccessLevel >= 100 ? user.Id : null);
+            if (orderModel == null) {
+                return new OrderDto();
+            }
+
+            OrderDto orderDto = this.mapper.Map<OrderDto>(orderModel);
+            orderDto.Status = this.mapper.Map<OrderStatusDto>(
+                (await this.lookupDataManager.GetOrderStatusesAsync()).FirstOrDefault(os => os.Id == orderModel.StatusId));
+            List<OrderProduct> orderItemModels = await this.orderDataManager.GetOrderItemsByOrderIdAsync(orderModel.Id);
+            orderDto.Items = orderItemModels.Select(obj =>
+            {
+                OrderItemDto itemDto = this.mapper.Map<OrderItemDto>(obj);
+                itemDto.Product = this.mapper.Map<ProductDto>(obj.Product);
+
+                return itemDto;
+            }).ToList();
+
+            return orderDto;
+        }
+
         public async Task<List<OrderDto>> GetPaymentDueOrders()
         {
             List<OrderProduct> orderItemModels = await this.orderDataManager.GetPaymentDueOrders();

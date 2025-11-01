@@ -7,6 +7,7 @@ using e_commerce_web.core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using e_commerce_web.data;
 
 namespace e_commerce_web.service
 {
@@ -53,7 +54,11 @@ namespace e_commerce_web.service
 
                 // attach user to context on successful jwt validation
                 User userModel = await userService.GetByIdAsync(userId);
-                context.Items["User"] = this.mapper.Map<UserDto>(userModel);
+                int userRoleId = userModel.UserRoleUsers.FirstOrDefault()?.RoleId
+                    ?? throw new ApplicationException("User doesn't have any role assigned");
+                UserDto dto = this.mapper.Map<UserDto>(userModel);
+                dto.Role = new RoleDto { Id = userRoleId };
+                context.Items["User"] = dto;
             }
             catch
             {
