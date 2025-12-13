@@ -39,7 +39,8 @@ namespace e_commerce_web.data
             IQueryable<Order> orderQuery = this.context.Orders
                 .Where(o => o.Id == orderId).AsQueryable();
 
-            if (userId != null) {
+            if (userId != null)
+            {
                 orderQuery.Where(o => o.UserId == userId);
             }
 
@@ -88,6 +89,13 @@ namespace e_commerce_web.data
                 .FirstAsync(o => o.Id == orderId);
             order.StatusId = orderStatusId;
             await this.context.SaveChangesAsync();
+        }
+
+        public async Task<List<Payment>> GetPaymentInfoAsync(int orderId)
+        {
+            return await this.context.Payments
+                .Include(p => p.Method)
+                .Where(p => p.OrderId == orderId).ToListAsync();
         }
     }
 }

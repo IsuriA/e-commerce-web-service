@@ -10,6 +10,7 @@ namespace e_commerce_web.service
     {
         private readonly OrderDataManager orderDataManager;
         private readonly LookupDataManager lookupDataManager;
+        private readonly UserDataManager userDataManager;
         private readonly IMapper mapper;
         private const string NEW_ORDER_STATUS_CODE = "NEW";
         private readonly IHttpContextAccessor httpContextAccessor;
@@ -17,11 +18,13 @@ namespace e_commerce_web.service
         public OrderService(
             OrderDataManager orderDataManager,
             LookupDataManager lookupDataManager,
+            UserDataManager userDataManager,
             IHttpContextAccessor httpContextAccessor,
             IMapper mapper)
         {
             this.orderDataManager = orderDataManager ?? throw new ArgumentNullException(nameof(orderDataManager));
             this.lookupDataManager = lookupDataManager ?? throw new ArgumentNullException(nameof(lookupDataManager));
+            this.userDataManager = userDataManager ?? throw new ArgumentNullException(nameof(userDataManager));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             this.httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         }
@@ -58,7 +61,8 @@ namespace e_commerce_web.service
             Role role = (await this.lookupDataManager.GetRolesAsync()).First(r => r.Id == user.Role.Id);
             RoleDto roleDto = this.mapper.Map<RoleDto>(role);
             Order orderModel = await this.orderDataManager.GetOrderById(orderId, roleDto.AccessLevel >= 100 ? user.Id : null);
-            if (orderModel == null) {
+            if (orderModel == null)
+            {
                 return new OrderDto();
             }
 
@@ -199,6 +203,21 @@ namespace e_commerce_web.service
             }
 
             await orderDataManager.UpdateOrderStatusAsync(paymentModel.OrderId, processingOrderStatusId);
+        }
+
+        public async Task<List<PaymentDto>> GetPaymentInfoAsync(int orderId)
+        {
+            List<Payment> paymentModels = await this.orderDataManager.GetPaymentInfoAsync(orderId);
+            User userModel = paymentModels.Count != 0 ? await this.userDataManager.GetByIdAsync(paymentModels[0].UserId) : null;
+
+            return paymentModels.Select(pm =>
+            {
+                PaymentDto paymentDto = this.mapper.Map<PaymentDto>(pm);
+                paymentDto.Method = this.mapper.Map<PaymentMethodDto>(pm.Method);
+                paymentDto.CreatedUser = userModel?.Username;
+
+                return paymentDto;
+            }).ToList();
         }
     }
 }

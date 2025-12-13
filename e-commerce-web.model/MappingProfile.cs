@@ -12,6 +12,10 @@ namespace e_commerce_web.model
             CreateMap<InquiryDto, Inquiry>().ConvertUsing<InquiryDtoToInqueryConverter>();
             CreateMap<ProductDto, Product>().ConvertUsing<ProductDtoToProductConverter>();
             CreateMap<UserDto, User>().ConvertUsing<UserDtoToUserConverter>();
+            CreateMap<CheckoutDto, Payment>().ConvertUsing<CheckoutDtoToPaymentConverter>();
+
+            CreateMap<OrderStatus, OrderStatusDto>().ConvertUsing<OrderStatusToOrderStatusDtoConverter>();
+            CreateMap<Payment, PaymentDto>().ConvertUsing<PaymentToPaymentDtoConverter>();
             CreateMap<Category, CategoryDto>().ConvertUsing<CategoryToCategoryDtoConverter>();
             CreateMap<Role, RoleDto>().ConvertUsing<RoleToRoleDtoConverter>();
             CreateMap<User, UserDto>().ConvertUsing<UserToUserDtoConverter>();
@@ -20,8 +24,6 @@ namespace e_commerce_web.model
             CreateMap<Order, OrderDto>().ConvertUsing<OrderToOrderDtoConverter>();
             CreateMap<OrderProduct, OrderItemDto>().ConvertUsing<OrderProductToOrderItemDtoConverter>();
             CreateMap<PaymentMethod, PaymentMethodDto>().ConvertUsing<PaymentMethodToPaymentMethodDtoConverter>();
-            CreateMap<CheckoutDto, Payment>().ConvertUsing<CheckoutDtoToPaymentConverter>();
-            CreateMap<OrderStatus, OrderStatusDto>().ConvertUsing<OrderStatusToOrderStatusDtoConverter>(); 
         }
     }
 }

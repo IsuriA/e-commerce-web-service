@@ -248,6 +248,8 @@ public partial class ECommerceDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.PaymentDate)
+                .HasColumnType("datetime");
             entity.Property(e => e.Amount).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.SpecialInstructions).HasColumnType("text");
         });

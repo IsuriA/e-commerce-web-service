@@ -87,5 +87,14 @@ namespace e_commerce_web_service.Controllers
 
             return Ok(order);
         }
+
+        [HttpGet("payment-info/{orderId}")]
+        //[Authorize]
+        public async Task<ActionResult> GetPaymentInfo(int orderId)
+        {
+            List<PaymentDto> order = await this.orderService.GetPaymentInfoAsync(orderId);
+
+            return Ok(order);
+        }
     }
 }
