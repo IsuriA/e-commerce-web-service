@@ -13,6 +13,7 @@ namespace e_commerce_web.model
             CreateMap<ProductDto, Product>().ConvertUsing<ProductDtoToProductConverter>();
             CreateMap<UserDto, User>().ConvertUsing<UserDtoToUserConverter>();
             CreateMap<CheckoutDto, Payment>().ConvertUsing<CheckoutDtoToPaymentConverter>();
+            CreateMap<PaymentDto, Payment>().ConvertUsing<PaymentDtoToPaymentConverter>();
 
             CreateMap<OrderStatus, OrderStatusDto>().ConvertUsing<OrderStatusToOrderStatusDtoConverter>();
             CreateMap<Payment, PaymentDto>().ConvertUsing<PaymentToPaymentDtoConverter>();

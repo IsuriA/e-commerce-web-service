@@ -12,9 +12,14 @@ namespace e_commerce_web.data
             _context = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public async Task<IEnumerable<User>> GetUsersAsync()
+        public async Task<IEnumerable<User>> GetUsersAsync(int? roleId = null)
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users
+                .Where(u => !roleId.HasValue || _context.UserRoles.First(ur => ur.UserId == u.Id).RoleId == roleId.Value)
+                .OrderBy(u => u.FirstName)
+                .Select(u => u)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<User> GetUserAsync(string username, string password)

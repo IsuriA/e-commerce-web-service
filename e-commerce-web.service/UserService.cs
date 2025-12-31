@@ -6,7 +6,6 @@ using e_commerce_web.data;
 using e_commerce_web.model;
 using e_commerce_web.core.DTOs;
 using e_commerce_web.core.Models;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -37,6 +36,14 @@ namespace e_commerce_web.service
         public async Task<IEnumerable<User>> GetAll()
         {
             return await _userDataManager.GetUsersAsync();
+        }
+
+        public async Task<IEnumerable<User>> GetAllCustomers()
+        {
+            int customerRoleId = (await this.lookupDataManager.GetRolesAsync())
+                .FirstOrDefault(os => os.Name.Equals("CUSTOMER", StringComparison.InvariantCultureIgnoreCase))?.Id
+                ?? throw new ApplicationException($"{nameof(OrderStatus)} CUSTOMER is not configured");
+            return await _userDataManager.GetUsersAsync(customerRoleId);
         }
 
         public async Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model)

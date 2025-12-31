@@ -219,5 +219,15 @@ namespace e_commerce_web.service
                 return paymentDto;
             }).ToList();
         }
+
+        public async Task UpdatePaymentDetailsAsync(PaymentDto paymentDto)
+        {
+            UserDto user = (UserDto)this.httpContextAccessor.HttpContext.Items["User"];
+
+            Payment payment = this.mapper.Map<Payment>(paymentDto);
+            payment.UserId = user.Id;
+
+            await this.orderDataManager.UpdatePaymentDetailsAsync(payment);
+        }
     }
 }

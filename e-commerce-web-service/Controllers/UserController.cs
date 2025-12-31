@@ -24,6 +24,12 @@ namespace e_commerce_web_service.Controllers
             return await this.userService.GetAll();
         }
 
+        [HttpGet("customers")]
+        //[Authorize]
+        public async Task<IEnumerable<User>> GetAllCustomers()
+        {
+            return await this.userService.GetAllCustomers();
+        }
 
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest model)

@@ -83,6 +83,17 @@ namespace e_commerce_web.data
             await this.context.SaveChangesAsync();
         }
 
+        public async Task UpdatePaymentDetailsAsync(Payment p) {
+
+            Payment payment = await this.context.Payments
+                .FirstAsync(o => o.Id == p.Id);
+            payment.Reference = p.Reference;
+            payment.PaymentDate = p.PaymentDate;
+            payment.UserId = p.UserId;
+
+            await this.context.SaveChangesAsync();
+        }
+
         public async Task UpdateOrderStatusAsync(int orderId, int orderStatusId)
         {
             Order order = await this.context.Orders

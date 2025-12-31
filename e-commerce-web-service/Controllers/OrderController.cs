@@ -89,12 +89,21 @@ namespace e_commerce_web_service.Controllers
         }
 
         [HttpGet("payment-info/{orderId}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult> GetPaymentInfo(int orderId)
         {
             List<PaymentDto> order = await this.orderService.GetPaymentInfoAsync(orderId);
 
             return Ok(order);
+        }
+
+        [HttpPost("save-payment-details")]
+        [Authorize]
+        public async Task<ActionResult> SavePaymentDetails(PaymentDto payment)
+        {
+            await this.orderService.UpdatePaymentDetailsAsync(payment);
+
+            return Ok();
         }
     }
 }
