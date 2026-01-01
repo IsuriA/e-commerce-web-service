@@ -12,6 +12,7 @@
         public string Reference { get; set; }
         public int Installments { get; set; }
         public int OrderId { get; set; }
-        public decimal Total {  get; set; }
+        public decimal Total { get; set; }
+        public int? CustomerId { get; set; }
     }
 }

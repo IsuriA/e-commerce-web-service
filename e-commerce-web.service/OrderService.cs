@@ -175,7 +175,7 @@ namespace e_commerce_web.service
             paymentModel.MethodId = (await this.lookupDataManager.GetPaymentMethodsAsync())
                 .FirstOrDefault(os => os.Code.Equals(dto.PaymentMethod, StringComparison.InvariantCultureIgnoreCase))?.Id
                 ?? throw new ApplicationException($"{nameof(PaymentMethod)} {dto.PaymentMethod} is not configured");
-            paymentModel.UserId = user.Id;
+            paymentModel.UserId = dto.CustomerId.HasValue ? dto.CustomerId.Value : user.Id;
 
             int processingOrderStatusId = (await this.lookupDataManager.GetOrderStatusesAsync())
                 .FirstOrDefault(os => os.Code.Equals("PROCESSING", StringComparison.InvariantCultureIgnoreCase))?.Id
@@ -208,13 +208,13 @@ namespace e_commerce_web.service
         public async Task<List<PaymentDto>> GetPaymentInfoAsync(int orderId)
         {
             List<Payment> paymentModels = await this.orderDataManager.GetPaymentInfoAsync(orderId);
-            User userModel = paymentModels.Count != 0 ? await this.userDataManager.GetByIdAsync(paymentModels[0].UserId) : null;
+            IEnumerable<User> userModels = await this.userDataManager.GetUsersAsync();
 
             return paymentModels.Select(pm =>
             {
                 PaymentDto paymentDto = this.mapper.Map<PaymentDto>(pm);
                 paymentDto.Method = this.mapper.Map<PaymentMethodDto>(pm.Method);
-                paymentDto.CreatedUser = userModel?.Username;
+                paymentDto.CreatedUser = userModels.FirstOrDefault(u => u.Id == pm.UserId)?.Username;
 
                 return paymentDto;
             }).ToList();
